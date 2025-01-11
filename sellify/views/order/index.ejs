@@ -1,37 +1,97 @@
 <% layout('boilerplate') %>
 
+<div class="order-title">
+    <h3>Pending Orders</h3>
+  </div>
+
+
     <% for(r of orders) {%>
         <% if(r.status!=="Delivered" ){ %>
             <div class="card mx-auto <%= r.status=='Delivered'?" border-success":" border-primary" %> mb-3"
                 style="max-width:
                 35rem;">
                 <div class="card-header">
-                    <%= "To Be Delivered" %>
+                    <%= "To Be Sold" %>
                         <span class="badge rounded-pill text-bg-success">Payment Verified</span>
                 </div>
                 <div class="card-body">
-                    <p>Ordered products:
-                    <ul>
-                        <% for(product of r.product){ %>
-                            <li>
-                                <%= product %>
-                            </li>
-                            <% } %>
-                    </ul>
+                    
+                    <p style="text-align: center; font-size: larger;">Total Price: <%= r.price %> TK
                     </p>
                     <hr>
-                    <p>Total Price: <%= r.price %>
+                    <p> <h6 style="text-align: center;">Ordered products:</h6>
+                        <ul>
+                            <% for(product of r.product){ %>
+                                <li>
+                                    <%= product %>
+                                </li>
+                                <% } %>
+                        </ul>
+                        </p>
+                        <hr>
+                        <h6 style="text-align: center;">Customer Details:</h6>
+                    <p>Delivery Address: <%= r.address %> <br>
+                    Phone Number: <%= r.phone %>
                     </p>
                     <hr>
-                    <p>Delivery Address: <%= r.address %>
-                    </p>
-                    <p>Phone Number: <%= r.phone %>
-                    </p>
-                    <hr>
-                    <form action="/order/<%= r._id %>?_method=PUT" method="post">
-                        <button class="btn btn-primary">Deliver</button>
-                    </form>
+                    <div style="display: flex; align-items: center; justify-content: center;">
+                        <form action="/order/<%= r._id %>?_method=PUT" method="post">
+                            <button class="btn btn-secondary">Sell</button>
+                        </form>
+                    </div>
+                    
                 </div>
             </div>
             <% } %>
                 <% } %>
+
+
+<style>
+
+    body {
+        height: 100vh;
+        background-image: linear-gradient(rgba(0, 0, 0, 0.9), rgba(0, 0, 0, 0.5)),
+        url("/images/bgHome.jpg");
+        background-size: cover;
+        background-position: center;
+        text-shadow: 0 0.05rem 0.1rem rgba(0, 0, 0, 0.5);
+        box-shadow: inset 0 0 5rem rgba(0, 0, 0, 0.5);
+    }
+        
+    .card {
+        background: linear-gradient(rgb(0, 66, 101), rgb(20, 20, 20));
+        color: beige;
+    }
+
+    .card-header {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        font-size: 1.4rem;
+        padding-top: 20px;
+        padding-bottom: 20px;
+    }
+
+    .order-title {
+    background: radial-gradient(circle, rgb(0, 113, 173), rgb(0, 43, 65));
+    max-width: 160vw;
+    text-align: center;
+    color: beige;
+    padding-top: 2px;
+    padding-bottom: 2px;
+    margin-bottom: 2px;
+}
+
+.btn-secondary {
+  color: #ffffff;
+  text-shadow: none;
+  background-color: rgb(0, 42, 69);
+}
+
+.btn-secondary:hover {
+    background-color: white;
+  color: rgb(0, 53, 84);
+  box-shadow: aqua;
+}
+
+</style>

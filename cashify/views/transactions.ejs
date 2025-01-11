@@ -1,21 +1,75 @@
 <% layout('boilerplate/boilerplate') %>
 
-    <% for(t of user.transactions) {%>
-        <div class="card mx-auto <%= user.username==t.sender?" border-danger":"border-success" %> mb-3"
-            style="max-width:
-            35rem;">
-            <div class="card-header">
-                <%= user.username==t.sender?"Cash Out":"Cash In" %>
-            </div>
-            <div class="card-body">
-                <h5 class="card-title">Amount: <%= t.amount %>
-                </h5>
-                <p class="card-text">Sender: <%= t.sender %>
-                </p>
-                <p class="card-text">Reciever: <%= t.reciever %>
-                </p>
-                <p class="card-text">Time: <%= t.date %>
-                </p>
-            </div>
+<div class="transaction-title">
+  <h3>Transaction History</h3>
+</div>
+<div class="container mt-10">
+  <% for(t of user.transactions) {%>
+  <div class="body">
+    <div class="cards">
+      <div class="card mx-auto">
+        <hr />
+        <div
+          class="card-header"
+          style="display: flex; justify-content: space-between"
+        >
+          <h4 style="color: brown">
+            <%= user.username==t.sender?"Cash Out":"Cash In" %>
+          </h4>
+          <h4 class="card-title"><%= t.amount %> TK</h4>
         </div>
-        <% } %>
+        <div
+          class="card-body"
+          style="
+            display: flex;
+            justify-content: start;
+            align-items: start;
+            text-align: left;
+          "
+        >
+          <p class="card-body" style="font-size: larger">
+            <b>Sender : </b><%= t.sender %> <br />
+            <b>Reciever : </b><%= t.reciever %> <br />
+            <b>Date and Time : </b><%= t.date %>
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <% } %>
+</div>
+
+<style>
+  .transaction-title {
+    background: radial-gradient(circle, #77ecf7, white);
+    width: 196vh;
+  }
+  .cards {
+    width: 135vh;
+    margin: 6px auto 6px;
+    display: flex;
+    flex-direction: column;
+  }
+  .card {
+    width: 135vh;
+    height: 25vh;
+    border-radius: 15px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+  }
+  .card:hover {
+    box-shadow: 0 4px 10px rgba(0, 128, 255, 0.5);
+  }
+  .container {
+    display: flex;
+    flex-direction: column;
+    overflow-x: hidden;
+    overflow-y: auto;
+    margin-top: 0px;
+    min-width: 196vh;
+    background: radial-gradient(circle, #77ecf7, white);
+  }
+</style>

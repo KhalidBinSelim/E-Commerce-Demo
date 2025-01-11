@@ -6,20 +6,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
   </head>
-  <body>
-    <main class="container mt-0">
-      <!-- <style>
-                      .home {
-                          display: flex;
-                          justify-content: center;
-                          align-items: center;
-                          height: 100vh;
-                          background-image: url('https://images.unsplash.com/photo-1537724326059-2ea20251b9c8?q=80&w=2076&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D');
-                          background-size: cover;
-                          background-position: center;
-                      }
-                  </style> -->
-
+  <body class="body">
+    <!-- <main class="container mt-0">
       <div class="bg">
         <img
           src="/bank.jpg"
@@ -45,34 +33,66 @@
           </div>
         </div>
       </div>
+    </main> -->
+    <main class="container mt-5">
+      <div class="card">
+        <div class="first">
+          <!-- <h1>PrimeVault</h1> -->
+           <img src="/prime vault logo.jpg" style="width: 40%; margin-bottom: 10px;">
+          <h5>
+            Empowering Your Financial Future with Trust, <br> Security, and Personalized Solutions.
+          </h5>
+          <a href="/register" class="btn btn-secondary">Sign Up</a>
+        </div>
+        <img
+          src="/bankCartoon.png"
+          class="second"
+        />
+      </div>
+    </body>
     </main>
-  </body>
-
+    
   <style>
+
+    .first {
+      align-items: center;
+      margin-top: 60px;
+      margin-bottom: 60px;
+    }
+
+    .second {
+      width: 100%;
+      margin-top: 100px;
+      margin-bottom: 100px;
+      align-items: end;
+      align-self: flex-end;
+    }
+
+    .card {
+      border-radius: 25px;
+      padding-left: 120px;
+      padding-right: 120px;
+      padding-top: 60px;
+      padding-bottom: 60px;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      place-items: center;
+      background: linear-gradient(to left, #77ecf7, #ffffff);
+    }
+
+    .body {
+      margin-top: 100px;
+    }
+
     .btn {
       width: 100px;
       height: 40px;
-      margin-top: 50px;
+      margin-top: 15px;
       text-align: center;
       color: rgb(0, 0, 0);
       background-color: rgba(255, 255, 255, 0.521);
-    }
-
-    .bg {
-      margin-top: 0px;
-      margin-bottom: 0px;
-      padding-top: 0px;
-      padding-bottom: 0px;
-      align-items: center;
-      display: flex;
-      flex-direction: column;
-    }
-
-    .bg-img {
-      margin-top: 0px;
-      margin-bottom: 0px;
-      padding-top: 0px;
-      padding-bottom: 0px;
+      /* background: linear-gradient(to right, #77ecf7, #ffffff); */
+      border-radius: 4px;
     }
   </style>
 </html>

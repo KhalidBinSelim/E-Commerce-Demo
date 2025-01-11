@@ -1,6 +1,6 @@
 <% layout('boilerplate/boilerplate') %>
 
-    <div class="card mb-3">
+<!-- <div class="card mb-3">
         <img src="https://images.unsplash.com/photo-1589190632370-dcc9388aab4b?q=80&w=2040&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
             class="card-img-top" alt="image of a bank">
         <div class="card-body text-center">
@@ -17,4 +17,104 @@
             
            
         </div>
+    </div> -->
+
+<div style="display: flex; flex-direction: column; justify-content: center">
+  <div class="dashboard-title">
+    <h3>User Dashboard</h3>
+  </div>
+  <div
+    class="container"
+    style="
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      margin: 0px auto;
+      background: radial-gradient(circle, #77ecf7, white);
+    "
+  >
+    <div class="cards">
+      <div class="card" style="width: 24rem; height: 45%; border-radius: 25px">
+        <img
+          class="card-img-first"
+          src="/IDCardImage.jpg"
+          alt="Card image first"
+          style="border-radius: 25px 25px 0 0"
+        />
+        <div class="card-body">
+          <h4 class="card-title">
+            <h3>Account Encrypted ID</h3>
+            <hr />
+            <%= user._id %>
+          </h4>
+        </div>
+      </div>
+      <div class="card" style="width: 24rem; height: 45%; border-radius: 25px">
+        <img
+          class="card-img-first"
+          src="/MoneyCardImage.jpg"
+          alt="Card image first"
+          style="border-radius: 25px 25px 0 0; width: 55%; margin: 0 auto"
+        />
+        <div class="card-body">
+          <h4 class="card-title">
+            <h3>Account Balance</h3>
+            <hr />
+            <%= user.balance %>
+          </h4>
+        </div>
+      </div>
+      <div class="card" style="width: 24rem; height: 45%; border-radius: 25px">
+        <img
+          class="card-img-first"
+          src="/ProfileCardImage.jpg"
+          alt="Card image first"
+          style="width: 55%; margin: 0 auto"
+        />
+        <div class="card-body">
+          <h4 class="card-title">
+            <h3>Account Username</h3>
+            <hr />
+            <%= user.username %>
+          </h4>
+        </div>
+      </div>
     </div>
+    <div style="margin-top: 20px; margin-bottom: 70px">
+      <form class="d-inline-block" action="/dummyaddtransaction" method="post">
+        <button class="btn btn-outline-dark ms-2">Add Money</button>
+      </form>
+    </div>
+  </div>
+</div>
+
+<style>
+  .container {
+    display: flex;
+    flex-direction: row;
+    margin-top: 0px;
+    min-width: 196vh;
+    max-height: 90vh;
+  }
+  .dashboard-title {
+    background: radial-gradient(circle, white, #77ecf7);
+    width: 196vh;
+  }
+  .cards {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    /* width: 105vh; */
+    margin: 80px auto 28px;
+  }
+  .card {
+    width: 24rem;
+    height: 45%;
+    margin-left: 20px;
+    margin-right: 20px;
+    border-radius: 25px;
+  }
+  .card:hover {
+    box-shadow: 0 4px 10px rgba(0, 128, 255, 0.5);
+  }
+</style>
