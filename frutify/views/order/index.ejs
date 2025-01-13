@@ -3,9 +3,11 @@
     <% for(r of orders) {%>
         <div class="card mx-auto <%= r.status=='Delivered'?" border-success":" border-danger" %> mb-3"
             style="max-width:
-            35rem;">
+            55rem;
+            display: flex;
+            justify-content: center;">
             <div class="card-header">
-                <%= r.status=="Delivered" ?r.status:r.status+" (Delivery Pending)" %>
+                <%= r.status=="Delivered" ?r.status:r.status+" (Pending)" %>
             </div>
             <div class="card-body">
                 <p>Ordered products:
@@ -23,7 +25,6 @@
                 <hr>
                 <p>Delivery Address: <%= r.address %>
                 </p>
-
             </div>
         </div>
         <% } %>
