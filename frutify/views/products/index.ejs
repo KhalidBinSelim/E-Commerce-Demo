@@ -1,6 +1,6 @@
 <% layout('boilerplate')%>
 
-<div style="display: flex; flex-direction: column; justify-content: center;">
+<div style="display: flex; flex-direction: column; justify-content: center; align-items: center;">
     <div>
         <h1>All Products</h1>
     </div>
@@ -15,25 +15,30 @@
                             <img class="img-fluid" alt="" src="<%=product.image%>" style="width: 250px; height: 250px;">
                         </div>
                         <div>
-                            <div class="card-body">
+                            <div class="card-body" style="display: flex; justify-content: space-between; flex-direction: column;">
                                 <h5 class="card-title">
                                     <%= product.name %>
                                 </h5>
                                 <p class="card-text">
                                     <%= product.description %>
                                 </p>
-                                <p class="card-text">
-                                    <small class="text-muted">
-                                        <%= product.price%>৳
-                                    </small>
-                                </p>
+                                
                                 
                             </div>
                             
                         </div>
                         
                     </div>
-                    <a class="btn btn-secondary" href="/product/<%=product._id%>">Buy Now</a>
+                    <div class="card-footer">
+                        <p class="card-text">
+                            <small class="text-muted">
+                                <%= product.price%>৳
+                            </small>
+                        </p>
+                        <hr>
+                        <a class="btn btn-secondary" href="/product/<%=product._id%>">Buy Now</a>
+                    </div>
+                    
                 </div>
                 <% }%>
                     </div>
@@ -44,6 +49,17 @@
 
     
 <style>
+    .card {
+        display: flex;
+    flex-direction: column;
+    height: 100%;
+    }
+    .card-body {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    flex-grow: 1;
+}
     .products {
         display: flex;
         justify-content: center;
@@ -61,4 +77,13 @@
       padding: 16px;
       text-align: center;
     }
+    .card-footer {
+    margin-top: auto;
+    border-top: none;
+    padding-top: 0;
+}
+
+.card-text.description {
+    flex: 1 1 40%;
+}
 </style>

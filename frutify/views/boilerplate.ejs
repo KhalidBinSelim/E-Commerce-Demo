@@ -36,7 +36,10 @@
     <%- include('./partials/navbar') %>
 
     <main class="container mt-5">
-      <%- include('./partials/flash') %> <%- body %>
+      <div style="display: flex; flex-direction: column; justify-content: center;">
+        <div><%- include('./partials/flash') %></div>
+        <div><%- body %></div>
+      </div>
     </main>
     <%- include('./partials/footer') %>
     <script
