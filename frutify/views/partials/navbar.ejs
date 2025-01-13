@@ -1,7 +1,7 @@
 <!-- <nav class="navbar navbar-expand-lg bg-body-tertiary"> -->
-<nav class="navbar navbar-expand-lg bg-dark border-bottom border-body" data-bs-theme="dark">
+<nav class="navbar navbar-expand-lg border-bottom border-body" data-bs-theme="dark">
     <div class="container-fluid">
-        <a class="navbar-brand" href="#">Frutify</a>
+        <a class="navbar-brand" href="#">YourCart</a>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
             aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
@@ -14,8 +14,8 @@
             </div>
             <div class="navbar-nav ms-auto">
                 <% if(!currentUser){ %>
-                    <a class="nav-link" href="/user/register">Register</a>
-                    <a class="nav-link" href="/user/login">Login</a>
+                    <a class="nav-link" href="/user/register">Sign up</a>
+                    <a class="nav-link" href="/user/login">Sign in</a>
                     <% } else { %>
                         <a class="nav-link" href="/user/logout">Logout</a>
                         <% } %>

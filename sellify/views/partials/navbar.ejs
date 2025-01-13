@@ -1,23 +1,29 @@
 <!-- <nav class="navbar navbar-expand-lg bg-body-tertiary"> -->
-<nav class="navbar navbar-expand-lg bg-dark border-bottom border-body" data-bs-theme="dark">
+<nav class="navbar navbar-expand-lg border-bottom border-body">
     <div class="container-fluid">
-        <a class="navbar-brand" href="#">VersaShip</a>
+        <a class="navbar-brand" href="#" style="color: azure;">VersaShip</a>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
             aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
         </button>
         <div class="collapse navbar-collapse" id="navbarNav">
             <div class="navbar-nav">
-                <a class="nav-link" href="/order">Orders</a>
-                <a class="nav-link" href="/order/history">History</a>
+                <a class="nav-link" href="/order" style="color: azure;">Orders</a>
+                <a class="nav-link" href="/order/history" style="color: azure;">History</a>
             </div>
             <div class="navbar-nav ms-auto">
                 <% if(!currentUser){ %>
-                    <a class="nav-link" href="/user/register">Register</a>
-                    <a class="nav-link" href="/user/login">Login</a>
+                    <a class="nav-link" href="/user/register" style="color: azure;">Sign Up</a>
+                    <a class="nav-link" href="/user/login" style="color: azure;">Login</a>
                     <% } else { %>
-                        <a class="nav-link" href="/user/logout">Logout</a>
+                        <a class="nav-link" href="/user/logout" style="color: azure;">Logout</a>
                         <% } %>
             </div>
         </div>
 </nav>
+
+<style>
+    navbar {
+        color: azure;
+    }
+</style>
